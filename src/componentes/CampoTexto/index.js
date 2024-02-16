@@ -2,9 +2,9 @@ import "./CampoTexto.css"
 import Input from '@mui/joy/Input';
 
 const CampoTexto = (props) =>{
-    const aoDigitado= (evento) =>{
+    const aoDigitado= (evento) =>{     
            {/* Esta função serve para escultar o que esta sendo digitado e guarda o ultimo valor */}
-        props.aoAlterador(evento.target.value)
+        props.aoAlterado(evento.target.value)
     }
 
     return(

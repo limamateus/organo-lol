@@ -6,6 +6,7 @@ import "./Formulario.css"
 import {useState} from 'react'
 
 const Formulario = (props) =>{
+
     const [nomeDoCampeao, setNomeDoCapeao] = useState('')
     const [funcaoDoCapeao, setFuncaoDoCapeao] = useState('')
     const [imagemUrl, setimagemUrl] = useState('')
@@ -22,7 +23,11 @@ const Formulario = (props) =>{
             imagemUrl,
             rota
         })
-    
+
+        setNomeDoCapeao('')
+        setFuncaoDoCapeao('')
+        setimagemUrl('')
+        setRota('')
     }
 
 
@@ -34,21 +39,21 @@ const Formulario = (props) =>{
                     label="Nome do Campeao"
                     placeholder="Digite o nome do seu Campeao Ex: Ashe"
                     valor={nomeDoCampeao}
-                    aoAlterado ={valor => setNomeDoCapeao(valor)}
+                    aoAlterado={valor => setNomeDoCapeao(valor)}
                     />
                     <CampoTexto
                     obrigatorio={true}
                     label="Função"
                     placeholder="Digite a função do seu Campeao Ex: ATIRADOR"
                     valor={funcaoDoCapeao}
-                    aoAlterado ={valor => setFuncaoDoCapeao(valor)}
+                    aoAlterado={valor => setFuncaoDoCapeao(valor)}
                     />
                     <CampoTexto
                     obrigatorio={true}
                     label="imagem Url"
                     placeholder=".png"
                     valor={imagemUrl}
-                    aoAlterado ={valor => setimagemUrl(valor)}
+                    aoAlterado={valor => setimagemUrl(valor)}
                     />
                     <ListaSuspensa
                      required={true} 

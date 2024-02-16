@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './App.css';
+
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
+import Rotas from './componentes/Rotas';
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
 
   const [campeoes,setCampeoes] = useState([])
 
-  const aoNovoCampeaoAdicionado = (campeao) =>{
+  const aoNovoCampeaoAdicionado = (campeao) =>{    
     setCampeoes([...campeoes,campeao])
   }
   return (
@@ -46,6 +47,15 @@ function App() {
           rotas ={rotas.map(rota => rota.nome)}
           novoCampeaoAdicionado = {campeao => aoNovoCampeaoAdicionado(campeao)}          
         />
+        {rotas.map(rota => <Rotas
+          key={rota.nome}
+          nome={rota.nome}
+          corPrimaria={rota.corPrimaria}
+          corSecundaria={rota.corSecundaria}
+          campeoes ={campeoes.filter(campeao => campeao.rota === rota.nome)}
+          />
+          
+          )}
         </div>
   );
 }

@@ -13,6 +13,7 @@ const ListaSuspensa = (props) => {
         <div className="listaSuspensa">
             <label>{props.label}</label>
             <select
+                value={props.valor}
                 required={props.required}
                 onChange={onSelecionado}>
                 {props.itens.map(rota => <option key={rota}>{rota} </option>)}
